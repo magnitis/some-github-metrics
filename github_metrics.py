@@ -7,6 +7,7 @@ import os
 import datetime
 import socket
 import pandas as pd
+from pathlib import Path
 
 socket.setdefaulttimeout(60 * 60)
 today = datetime.date.today()
@@ -194,7 +195,9 @@ def main():
     organization = args.org
     authToken = args.token
     g = Github(authToken)
-    directory = "output/" + organization
+    # Change to absolute - save under github dir
+    base_path = Path(__file__).resolve().parents[1]
+    directory = os.path.join(base_path, "output", organization)
     if not os.path.exists(directory):
         os.makedirs(directory)
 
