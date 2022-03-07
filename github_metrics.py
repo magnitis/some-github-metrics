@@ -208,6 +208,8 @@ def main():
         #export_code_frequency(directory, organization, authToken)
         print("")
         export_community_engagement(directory, organization, authToken)
+        print(f"Files saved in {directory}")
+        print(f"Directory contents: {os.listdir(directory)}")
     except Exception as e:
         print(e)
 
