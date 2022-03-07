@@ -205,7 +205,7 @@ def main():
         print("Valid token. Starting process. \n")
         list_org_members(organization, authToken)
         print("")
-        export_code_frequency(directory, organization, authToken)
+        #export_code_frequency(directory, organization, authToken)
         print("")
         export_community_engagement(directory, organization, authToken)
     except Exception as e:
